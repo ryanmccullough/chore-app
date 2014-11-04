@@ -35,12 +35,11 @@ app.delete('/api/chores/:chore_id', function(req, res) {
 		});
 	});
 });
-};
-
 // angular call
 app.get('*', function(req, res){
 	res.sendfile('./public/index.html');
 });
+};
 
 function isLoggedIn() {
 	if (req.isAuthenticated())

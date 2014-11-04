@@ -1,5 +1,5 @@
 // routes
-var Chore = require('/models/chore.js');
+var Chore = require('../models/chore.js');
 
 module.exports = function(app) {
 

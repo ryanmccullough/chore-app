@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
-apt.use(cookieParser());
+app.use(cookieParser());
 
 // passport config
 app.use(session({ secret: 'testsecret' })); // session secret

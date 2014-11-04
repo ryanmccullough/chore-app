@@ -37,7 +37,7 @@ app.use(passport.session()); // persist logins
 app.use(flash()); // session messages
 
 // routes
-require('./app/routes/.js')(app);
+require('./app/routes/chore.js')(app);
 require('./app/routes/auth.js')(app);
 
 // listen

@@ -9,7 +9,6 @@ app.get('/api/chores',function(req, res) {
 		if (err)
 			res.send(err)
 		res.json(chores);
-		console.log(chores);
 	});
 });
 app.post('/api/chores', function(req, res) {

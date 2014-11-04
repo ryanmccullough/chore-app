@@ -34,14 +34,10 @@ app.use(passport.initialize());
 app.use(passport.session()); // persist logins
 app.use(flash()); // session messages
 
-// models
-var Chore = mongoose.model('Chore', {
-	text : String
-});
-
 // routes
-require('./app/routes.js')(app, passport, Chore);
+require('./app/routes/chore.js')(app);
+require('./app/routes/auth.js')(app);
 
 // listen
 app.listen(port);
-console.log('App listening on port 8080 ' + port);
+console.log('App listening on port ' + port);

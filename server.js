@@ -40,12 +40,7 @@ var Chore = mongoose.model('Chore', {
 });
 
 // routes
-require('./app/routes.js')(app, passport);
-
-// angular call
-app.get('*', function(req, res){
-	res.sendfile('./public/index.html');
-});
+require('./app/routes.js')(app, passport, Chore);
 
 // listen
 app.listen(port);

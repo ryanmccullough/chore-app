@@ -1,6 +1,6 @@
 // routes
 
-module.exports = function(app, passport) {
+module.exports = function(app, passport, Chore) {
 app.get('/api/chores',function(req, res) {
 	Chore.find(function(err, chores) {
 		if (err)

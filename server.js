@@ -29,7 +29,9 @@ app.use(methodOverride());
 app.use(cookieParser());
 
 // passport config
-app.use(session({ secret: 'testsecret' })); // session secret
+app.use(session({ secret: 'testsecret',
+	resave: 'true',
+	saveUninitialized: 'true' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persist logins
 app.use(flash()); // session messages

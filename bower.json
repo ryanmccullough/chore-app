@@ -1,0 +1,15 @@
+// bower.json
+{
+"name": "chore-app",
+"description": "Chore Management Made Easy",
+"version": "0.0.1",
+"homepage": "https://github.com/ryansmccullough/chore-app",
+"license": "MIT",
+"private": true,
+"dependencies": {
+  "angular": "latest",
+  "bootstrap": "latest",
+  "jquery": "latest",
+  "angular-animate": "latest"
+}
+}

@@ -7,29 +7,35 @@
     <!-- META -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
-
-    <title>Node/Angular Todo App</title>
-
+    <title>Index | Chored</title>
     <!-- SCROLLS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <link rel="stylesheet" href="/css/background.css"><!-- load bootstrap -->
     <style>
         html                    { overflow-y:scroll; }
-        body                    { padding-top:50px; }
-        #todo-list              { margin-bottom:30px; }
+        #chore-list              { margin-bottom:30px; }
+        .card   {background-color: #ccc; margin-bottom: 25px;}
     </style>
-
     <!-- SPELLS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script><!-- load angular -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular-animate.js"></script>
     <script src="js/controllers/main.js"></script>
     <script src="js/services/chores.js"></script>
     <script src="js/core.js"></script>
-
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 <body ng-controller="mainController">
-    <div class="container">
-
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        Chored
+      </a>
+    </div>
+  </div>
+</nav>
+    <div class="container-fluid">
         <!-- HEADER AND TODO COUNT -->
         <div class="jumbotron text-center">
             <h1>Welcome to the ChoreD App.</h1>
@@ -37,39 +43,29 @@
             </p>
             <span class="label label-info">Total Number of Chores Remaining : {{ chores.length }}</span>
         </div>
-
         <!-- TODO LIST -->
-        <div id="todo-list" class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-
-                <!-- LOOP OVER THE TODOS IN $scope.chores -->
-                <div class="checkbox" ng-repeat="chore in chores">
-                    <label>
-                        <input type="checkbox" ng-click="deleteChore(chore._id)"> {{ chore.text }}</input>
-                    </label>
+        <!-- LOOP OVER THE TODOS IN $scope.chores -->
+        <div id="bicolumn" class="container">
+            <div class="row">
+                <div id="chore-list container">
+                    <div class="col-md-6">
+                        <div class="well container" ng-repeat="chore in chores">
+                            <button type="button" class="close" ng-click="deleteChore(chore._id)"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h5 class="text-left">{{ chore.text }}</h4>
+                        </div>
+                    </div>
                 </div>
-
-            </div>
-        </div>
-
-        <!-- FORM TO CREATE TODOS -->
-        <div id="todo-form" class="row">
-            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <div id="chore-form container">
+                <div class="col-md-6 text-center">
                 <form>
                     <div class="form-group">
-
                         <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                         <input type="text" class="form-control input-lg text-center" placeholder="Add a chore!" ng-model="formData.text">
-                    </div>
-
                     <!-- createToDo() WILL CREATE NEW TODOS -->
                     <button type="submit" class="btn btn-primary btn-lg" ng-click="createChore()">Add</button>
                 </form>
             </div>
-        </div>
-
-    </div>
-
+        </div>    
+       
 </body>
 </html>
-

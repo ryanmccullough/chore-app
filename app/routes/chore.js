@@ -1,4 +1,4 @@
-// routes
+// /app/routes/chore.js
 var Chore = require('../models/chore.js');
 
 module.exports = function(app) {
@@ -13,8 +13,7 @@ app.get('/api/chores',function(req, res) {
 });
 app.post('/api/chores', function(req, res) {
 	Chore.create({
-		text : req.body.text,
-		done : false
+		text : req.body.text
 	}, function(err, chore) {
 		if (err)
 			res.send(err);

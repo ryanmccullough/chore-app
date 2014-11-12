@@ -1,15 +1,12 @@
 //chore.js
 var mongoose = require('mongoose');
 
-var choreSchema = mongoose.Schema({
+var choreSchema = {
+	text : String,
+	
+}
 
-    Chore            : {
-        text        : String,
-        title     : String,
-        desc	: String,
-        user 	: String
-    }
-
+module.exports = mongoose.model('Chore', {
+	text : String,
+	done : Boolean
 });
-
-module.exports = mongoose.model('Chore', choreSchema);

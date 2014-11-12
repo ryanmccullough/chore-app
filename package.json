@@ -3,7 +3,7 @@
   "version"      : "0.0.1",
   "description"  : "Get stuff done.",
   "main"         : "server.js",
-  "author"       : "Ryan",
+  "author"       : "Ryan McCullough",
   "dependencies" : {
     "express"    : "~4.7.2",
     "mongoose"   : "~3.6.2",
@@ -11,11 +11,11 @@
     "body-parser": "~1.5.2",
     "method-override": "~2.1.2",
     "bcrypt-nodejs" : "latest",
-
     "passport"	: "latest",
-	"passport-local" : "latest",
-	"connect-flash" : "latest",
-	"cookie-parser" : "latest",
-	"express-session" : "latest"
+	  "passport-local" : "latest",
+	  "connect-flash" : "latest",
+	  "cookie-parser" : "latest",
+	  "express-session" : "latest",
+    "node-sass" : "latest"
 	}
 }
